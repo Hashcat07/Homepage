@@ -1,6 +1,6 @@
-/* =========================
-   CSS RESET
-========================= */
+/* ========================== */
+/* RESET */
+/* ========================== */
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -13,6 +13,7 @@
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  font-family: system-ui, sans-serif;
 }
 
 img, picture, video, canvas, svg {
@@ -32,21 +33,37 @@ p, h1, h2, h3, h4, h5, h6 {
   isolation: isolate;
 }
 
-/* =========================
-   ROOT VARIABLES
-========================= */
+
+
+/* ========================== */
+/* VARIABLES */
+/* ========================== */
 
 :root {
   --bg-color: #1b8ea5;
 }
 
-/* =========================
-   HEADER
-========================= */
+
+
+/* ========================== */
+/* LAYOUT CONTAINER */
+/* ========================== */
+
+.container {
+  width: 92%;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+
+
+/* ========================== */
+/* HEADER */
+/* ========================== */
 
 header {
   position: relative;
-  height: 650px;
+  min-height: 650px;
 }
 
 .header-bg {
@@ -58,13 +75,13 @@ header {
 }
 
 header .container {
-  width: 1500px;
-  margin: 0 auto;
-  height: 650px;
   display: flex;
   align-items: center;
   gap: 50px;
+  min-height: 650px;
 }
+
+
 
 /* Profile */
 
@@ -91,11 +108,13 @@ header .container {
   font-weight: 400;
 }
 
+
+
 /* About */
 
 header .container .about {
-  width: 900px;
-  height: 375px;
+  flex: 1;
+  min-height: 375px;
   background: white;
   padding: 50px;
   margin-left: -62px;
@@ -127,12 +146,13 @@ header .container .about {
   height: 35px;
 }
 
-/* =========================
-   MAIN
-========================= */
+
+
+/* ========================== */
+/* MAIN */
+/* ========================== */
 
 .main-content {
-  width: 1500px;
   margin: 150px auto;
 }
 
@@ -141,6 +161,8 @@ header .container .about {
   margin-bottom: 50px;
 }
 
+
+
 /* Project Grid */
 
 .project-container {
@@ -148,6 +170,8 @@ header .container .about {
   grid-template-columns: repeat(3,1fr);
   gap: 44px;
 }
+
+
 
 /* Cards */
 
@@ -192,20 +216,26 @@ header .container .about {
   height: 28px;
 }
 
-/* =========================
-   FOOTER
-========================= */
+
+
+/* ========================== */
+/* FOOTER */
+/* ========================== */
 
 footer {
   background-color: var(--bg-color);
   padding: 100px 0;
+}
+
+footer .container {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 100px;
 }
 
 .footer-content {
-  width: 525px;
+  max-width: 525px;
   color: white;
 }
 
@@ -231,7 +261,9 @@ footer {
   fill: white;
 }
 
-/* Footer image */
+
+
+/* Footer Image */
 
 .footer-image {
   width: 525px;
@@ -242,4 +274,120 @@ footer {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+
+
+/* ========================== */
+/* TABLET */
+/* ========================== */
+
+@media (max-width: 1024px) {
+
+  header .container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .profile {
+    width: 420px;
+    height: 420px;
+  }
+
+  .profile h3 {
+    font-size: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  header .container .about {
+    margin-left: 0;
+    margin-top: -80px;
+    width: 100%;
+    max-width: 700px;
+    padding: 40px;
+  }
+
+  .about h2 {
+    font-size: 2.2rem;
+  }
+
+  .about p {
+    font-size: 1.1rem;
+  }
+
+  .project-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+  }
+
+  .main-content {
+    margin: 120px 0;
+  }
+
+  footer .container {
+    flex-direction: column;
+    text-align: center;
+    gap: 60px;
+  }
+
+  .footer-image {
+    width: 420px;
+    height: 420px;
+  }
+
+  .footer-content {
+    max-width: 600px;
+  }
+
+  .contact-details {
+    justify-content: center;
+  }
+
+}
+
+
+
+/* ========================== */
+/* MOBILE */
+/* ========================== */
+
+@media (max-width: 700px) {
+
+  .profile {
+    width: 100%;
+    height: auto;
+  }
+
+  .profile h3 {
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+  }
+
+  header .container .about {
+    margin-top: -50px;
+    padding: 30px;
+  }
+
+  .about h2 {
+    font-size: 2rem;
+  }
+
+  .about p {
+    font-size: 1rem;
+  }
+
+  .project-container {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-image {
+    width: 100%;
+    height: auto;
+  }
+
 }
