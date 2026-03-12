@@ -1,10 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
 /* ========================== */
 /* RESET */
 /* ========================== */
 
-*,
-*::before,
-*::after {
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
@@ -18,36 +18,24 @@ body {
   font-family: system-ui, sans-serif;
 }
 
-img,
-picture,
-video,
-canvas,
-svg {
+img, picture, video, canvas, svg {
   display: block;
   max-width: 100%;
 }
 
-input,
-button,
-textarea,
-select {
+input, button, textarea, select {
   font: inherit;
 }
 
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
 }
 
-#root,
-#__next {
+#root, #__next {
   isolation: isolate;
 }
+
+
 
 /* ========================== */
 /* VARIABLES */
@@ -57,6 +45,8 @@ h6 {
   --bg-color: #1b8ea5;
 }
 
+
+
 /* ========================== */
 /* LAYOUT CONTAINER */
 /* ========================== */
@@ -65,6 +55,12 @@ h6 {
   width: 92%;
   max-width: 1500px;
   margin: 0 auto;
+}
+
+h1,
+h2,
+h3{
+  font-family: "Playfair Display",sans-serif;
 }
 
 /* ========================== */
@@ -80,7 +76,7 @@ header {
   position: absolute;
   inset: 0;
   background-color: var(--bg-color);
-  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+  clip-path: polygon(0 0,100% 0,100% 75%,0 100%);
   z-index: -1;
 }
 
@@ -91,6 +87,8 @@ header .container {
   min-height: 650px;
 }
 
+
+
 /* Profile */
 
 .profile {
@@ -98,7 +96,7 @@ header .container {
   height: 525px;
   position: relative;
   flex-shrink: 0;
-  box-shadow: 0 12px 31px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 12px 31px rgba(0,0,0,0.25);
 }
 
 .profile img {
@@ -116,6 +114,8 @@ header .container {
   font-weight: 400;
 }
 
+
+
 /* About */
 
 header .container .about {
@@ -124,7 +124,7 @@ header .container .about {
   background: white;
   padding: 50px;
   margin-left: -62px;
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -152,6 +152,8 @@ header .container .about {
   height: 35px;
 }
 
+
+
 /* ========================== */
 /* MAIN */
 /* ========================== */
@@ -165,19 +167,23 @@ header .container .about {
   margin-bottom: 50px;
 }
 
+
+
 /* Project Grid */
 
 .project-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3,1fr);
   gap: 44px;
 }
+
+
 
 /* Cards */
 
 .card {
   background: white;
-  box-shadow: 0 8px 19px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 19px rgba(0,0,0,0.2);
 }
 
 .proj-image {
@@ -215,6 +221,8 @@ header .container .about {
   width: 28px;
   height: 28px;
 }
+
+
 
 /* ========================== */
 /* FOOTER */
@@ -259,6 +267,8 @@ footer .container {
   fill: white;
 }
 
+
+
 /* Footer Image */
 
 .footer-image {
@@ -272,11 +282,14 @@ footer .container {
   object-fit: cover;
 }
 
+
+
 /* ========================== */
 /* TABLET */
 /* ========================== */
 
 @media (max-width: 1024px) {
+
   header .container {
     flex-direction: column;
     justify-content: center;
@@ -339,13 +352,17 @@ footer .container {
   .contact-details {
     justify-content: center;
   }
+
 }
+
+
 
 /* ========================== */
 /* MOBILE */
 /* ========================== */
 
 @media (max-width: 700px) {
+
   .profile {
     width: 100%;
     height: auto;
@@ -378,4 +395,5 @@ footer .container {
     width: 100%;
     height: auto;
   }
+
 }
